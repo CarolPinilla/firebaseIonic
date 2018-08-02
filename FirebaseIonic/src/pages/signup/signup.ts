@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Authentication} from '../../services/authentication'
 
 /**
  * Generated class for the SignupPage page.
@@ -16,21 +17,29 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class SignupPage {
 
-  email: string = "curso@gmail.com";
+  email: string;
   password: string;
 
   //inyeccion de dependencias
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private angularFire: AngularFireAuth) {
-    
+    private angularFire: AngularFireAuth, private auth: Authentication) {
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  createAccount(){
-   this.angularFire.auth.createUserWithEmailAndPassword(this.email, this.password);
+  createAccount() {
+    this.auth.createUserWithEmailAndPassword(this.email, this.password);
+  }
+
+  createAccountWithGoogle(){
+    this.auth.crearUsuarioGoogle();
+  }
+
+  createAccountWithFacebook(){
+    this.auth.crearUsuarioFacebook();
   }
 
 }
