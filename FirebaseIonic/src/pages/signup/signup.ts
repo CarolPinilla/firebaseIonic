@@ -23,7 +23,7 @@ export class SignupPage {
   //inyeccion de dependencias
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private angularFire: AngularFireAuth, private auth: Authentication) {
-
+      
   }
 
   ionViewDidLoad() {
