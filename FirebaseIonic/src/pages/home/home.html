@@ -15,6 +15,7 @@
 <div *ngIf="!!auth.token">
   <input type="file" multiple="true" (change)=fileChange($event)>
   <button ion-button (tap)="Submit()" secondary>Subir Archivo</button>
+  
 </div>
 
 </ion-content>
