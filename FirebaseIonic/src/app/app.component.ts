@@ -17,17 +17,22 @@ export class MyApp {
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
+  paginasInvitados: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public auth: Authentication) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Crear Cuenta', component: SignupPage }
+      { title: 'Inicio', component: HomePage },
+      { title: 'List', component: ListPage }
 
     ];
+
+    this.paginasInvitados=[
+      { title: 'Crear Cuenta', component: SignupPage }
+     
+    ]
 
   }
   cerrarSesion(){

@@ -18,6 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Authentication } from '../services/authentication';
 
+import {Uploader} from '../services/files'
+
 
 
 
@@ -49,6 +51,8 @@ import { Authentication } from '../services/authentication';
     StatusBar,
     SplashScreen,
     Authentication,
+    Uploader,
+
     {provide: ErrorHandler, useClass: IonicErrorHandler}.provide
   ]
 })
